@@ -1,1 +1,0 @@
-var e={progress:0,section:0,focusZone:null,focusStartedAt:0};export{e as t};
