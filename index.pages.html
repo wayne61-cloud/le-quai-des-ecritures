@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yohann-Axel Bouah — Le Quai des Écritures | Portfolio comptable</title>
+    <meta
+      name="description"
+      content="Portfolio interactif 3D de Yohann-Axel Bouah, étudiant BTS Comptabilité & Gestion à Lille. Une promenade côtière narrative : plage, repères dorés, ponton et horizon."
+    />
+    <meta name="author" content="Yohann-Axel Bouah" />
+    <meta property="og:title" content="Yohann-Axel Bouah — Le Quai des Écritures" />
+    <meta
+      property="og:description"
+      content="Un parcours comptable, raconté comme une promenade au bord de l'eau. Portfolio 3D immersif."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="%BASE_URL%favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <style>
+      html,
+      body,
+      #root {
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: #07111b;
+      }
+
+      .pages-fallback {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        color: #fff7e8;
+        background:
+          radial-gradient(circle at 50% 22%, rgba(214, 179, 106, 0.2), transparent 32rem),
+          linear-gradient(180deg, #07111b 0%, #0c1824 100%);
+        font-family: Inter, system-ui, sans-serif;
+        text-align: center;
+      }
+
+      .pages-fallback__mark {
+        width: 4rem;
+        height: 0.2rem;
+        margin: 0 auto 1rem;
+        border-radius: 999px;
+        background: #d6b36a;
+        animation: pages-fallback-pulse 1.1s ease-in-out infinite alternate;
+      }
+
+      .pages-fallback__title {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        letter-spacing: 0;
+      }
+
+      .pages-fallback__text {
+        max-width: 34rem;
+        margin: 0.75rem auto 0;
+        color: rgba(255, 247, 232, 0.72);
+        line-height: 1.6;
+      }
+
+      @keyframes pages-fallback-pulse {
+        from {
+          opacity: 0.42;
+          transform: scaleX(0.72);
+        }
+
+        to {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="pages-fallback">
+        <div>
+          <div class="pages-fallback__mark"></div>
+          <p class="pages-fallback__title">Le Quai des Écritures</p>
+          <p class="pages-fallback__text">
+            La plage comptable se prépare. Le portfolio interactif arrive dans quelques secondes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/pages-entry.tsx"></script>
+  </body>
+</html>

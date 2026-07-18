@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { ClientOnly } from "@tanstack/react-router";
 import { ArrowDown, Check, CircleDot, Download, Keyboard, Mouse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/lib/cv-data";
@@ -134,9 +133,14 @@ export function Portfolio() {
   const [activeSection, setActiveSection] = useState<ZoneId>("intro");
   const [openZone, setOpenZone] = useState<ZoneId | null>(null);
   const [showTutorial, setShowTutorial] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   const goToProgress = useCallback((value: number) => {
     targetProgressRef.current = clamp(value);
+  }, []);
+
+  useEffect(() => {
+    setIsClient(true);
   }, []);
 
   const updateHash = useCallback((sectionId: ZoneId) => {
@@ -431,7 +435,7 @@ export function Portfolio() {
       className="relative h-screen touch-none overflow-hidden bg-[#07111b] text-foreground"
     >
       <div className="absolute inset-0 z-0">
-        <ClientOnly fallback={<CanvasFallback />}>
+        {isClient ? (
           <Suspense fallback={<CanvasFallback />}>
             <Scene3D
               zones={MAP_HOTSPOT_ZONES}
@@ -440,7 +444,9 @@ export function Portfolio() {
               onOpen={openSection}
             />
           </Suspense>
-        </ClientOnly>
+        ) : (
+          <CanvasFallback />
+        )}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
