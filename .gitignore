@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 .output
+gh-pages-dist
 .vinxi
 .tanstack/**
 .nitro

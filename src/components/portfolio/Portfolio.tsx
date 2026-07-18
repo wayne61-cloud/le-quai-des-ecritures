@@ -107,7 +107,8 @@ const AUTO_PANEL_ZONE_IDS = new Set<ZoneId>([
 ]);
 const WELCOME_COPY =
   "Bienvenue sur la plage comptable de Yohann Bouah. Scrollez, utilisez les flèches du clavier et cliquez sur les points dorés pour explorer mon parcours, mes compétences, mes expériences et mon projet professionnel.";
-const QUAI_MODEL_PRELOAD = "/models/quai/scene-optimized.glb";
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+const QUAI_MODEL_PRELOAD = publicAsset("models/quai/scene-optimized.glb");
 
 const clamp = (value: number, min = 0, max = 1) => Math.max(min, Math.min(max, value));
 

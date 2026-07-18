@@ -7,8 +7,10 @@ import * as THREE from "three";
 import { CameraRig } from "./CameraRig";
 import type { ZoneDefinition, ZoneId } from "./types";
 
-const QUAI_MODEL_PATH = "/models/quai/scene-optimized.glb";
-const DRACO_DECODER_PATH = "/draco/";
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
+const QUAI_MODEL_PATH = publicAsset("models/quai/scene-optimized.glb");
+const DRACO_DECODER_PATH = publicAsset("draco/");
 const DEBUG_HOTSPOTS = false;
 
 type Scene3DProps = {
